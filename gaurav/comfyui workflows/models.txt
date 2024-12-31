@@ -1,0 +1,6 @@
+install these for hairstyle
+
+xl\dreamshaperXL_lightningInpaint.safetensors - checkpoint on civitai - hhttps://civitai.com/api/download/models/450187
+xl\juggernautXL_version6Rundiffusion.safetensors - checkpoint on huggingface - https://huggingface.co/frankjoshua/juggernautXL_version6Rundiffusion/resolve/main/juggernautXL_version6Rundiffusion.safetensors
+xl\openposeXL2.safetensors - controlnet on huggingface - https://huggingface.co/ddHbb/openposexl/resolve/main/controlnetxlCNXL_tencentarcOpenpose.safetensors
+xl\scccccc_diffusion_pytorch_model(4).safetensors - controlnet on huggingface - https://huggingface.co/ShermanG/ControlNet-Standard-Lineart-for-SDXL/resolve/main/diffusion_pytorch_model.safetensors

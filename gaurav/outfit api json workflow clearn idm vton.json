@@ -1,0 +1,132 @@
+{
+    "1": {
+        "inputs": {
+            "image": "crop top short jeans.png",
+            "upload": "image"
+        },
+        "class_type": "LoadImage"
+    },
+    "2": {
+        "inputs": {
+            "image": "Screenshot 2024-09-15 at 2.26.23 PM.png",
+            "upload": "image"
+        },
+        "class_type": "LoadImage"
+    },
+    "4": {
+        "inputs": {
+            "prompt": "short jeans",
+            "threshold": 0.51,
+            "sam_model": [
+                "5",
+                0
+            ],
+            "grounding_dino_model": [
+                "6",
+                0
+            ],
+            "image": [
+                "22",
+                0
+            ]
+        },
+        "class_type": "GroundingDinoSAMSegment (segment anything)"
+    },
+    "5": {
+        "inputs": {
+            "model_name": "sam_vit_h (2.56GB)"
+        },
+        "class_type": "SAMModelLoader (segment anything)"
+    },
+    "6": {
+        "inputs": {
+            "model_name": "GroundingDINO_SwinB (938MB)"
+        },
+        "class_type": "GroundingDinoModelLoader (segment anything)"
+    },
+    "7": {
+        "inputs": {
+            "mask": [
+                "4",
+                1
+            ]
+        },
+        "class_type": "MaskToImage"
+    },
+    "9": {
+        "inputs": {
+            "model": "densepose_r101_fpn_dl.torchscript",
+            "cmap": "Viridis (MagicAnimate)",
+            "resolution": 768,
+            "image": [
+                "22",
+                0
+            ]
+        },
+        "class_type": "DensePosePreprocessor"
+    },
+    "14": {
+        "inputs": {
+            "weight_dtype": "float16"
+        },
+        "class_type": "PipelineLoader"
+    },
+    "22": {
+        "inputs": {
+            "mode": "rescale",
+            "supersample": "true",
+            "resampling": "nearest",
+            "rescale_factor": 2,
+            "resize_width": 760,
+            "resize_height": 1024,
+            "image": [
+                "1",
+                0
+            ]
+        },
+        "class_type": "Image Resize"
+    },
+    "46": {
+        "inputs": {
+            "garment_description": "a model is wearing crop top, short lower apparel",
+            "negative_prompt": "distorted, ugly, low quality, blurry, bad quality, lowres, worst quality",
+            "width": 768,
+            "height": 1024,
+            "num_inference_steps": 30,
+            "guidance_scale": 2,
+            "strength": 1,
+            "seed": 240547548064833,
+            "pipeline": [
+                "14",
+                0
+            ],
+            "human_img": [
+                "22",
+                0
+            ],
+            "pose_img": [
+                "9",
+                0
+            ],
+            "mask_img": [
+                "7",
+                0
+            ],
+            "garment_img": [
+                "2",
+                0
+            ]
+        },
+        "class_type": "IDM-VTON"
+    },
+    "47": {
+        "inputs": {
+            "filename_prefix": "ComfyUI",
+            "images": [
+                "46",
+                0
+            ]
+        },
+        "class_type": "SaveImage"
+    }
+}
